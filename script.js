@@ -2,7 +2,7 @@ const champion = "champion"
 const campeonesCont = document.getElementById("champs");
 let allChampions = [];
 const getAllChampions = async () => {
-    const response = await fetch('http://ddragon.leagueoflegends.com/cdn/13.14.1/data/en_US/champion.json');
+    const response = await fetch('https://ddragon.leagueoflegends.com/cdn/13.14.1/data/en_US/champion.json');
     const data = await response.json();
     allChampions = Object.values(data.data)
     printAllChampions();
