@@ -1,0 +1,7 @@
+html {
+    overflow-y: auto;
+}
+.my-text{
+    border-radius: 6px;
+    box-shadow: 0 0.5em 2em;
+}
