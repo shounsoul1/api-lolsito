@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>PokeApi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>ApiLolsito</title>
 </head>
 <body>
-    <nav class="has-background-warning-dark">
-            <div class="is-flex is-align-items-center p-2">
-                <img src="img/pokeball.png" style="width: 50px;">
-                <label class="label mr-5 is-size-4 mb-1 ml-1">POKEDEX</label>
-                <input id="texto" class="input is-rounded" type="text" placeholder="Busca un campeón">
+    <nav>
+            <div class="is-flex is-align-items-center pl-3 pr-3">
+                <svg fill="#d11f1f" width="35px" height="35px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" stroke="#d11f1f"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>Riot Games icon</title><path d="M12.534 21.77l-1.09-2.81 10.52.54-.451 4.5zM15.06 0L.307 6.969 2.59 17.471H5.6l-.52-7.512.461-.144 1.81 7.656h3.126l-.116-9.15.462-.144 1.582 9.294h3.31l.78-11.053.462-.144.82 11.197h4.376l1.54-15.37Z"></path></g></svg>
+                <label id="text-logo" class="label is-size-4 mb-1 ml-4  is-size-5 ">League of legends</label>
+                <input id="texto" class="input is-rounded is-primary" type="text" placeholder="Busca un campeón">
                 <button id="buscar" class="button is-link ml-2">Buscar</button>
         </div>
     </nav>    
-    <div id="champs" class="columns is-multiline">    
+    <div id="champs" class="columns is-multiline is-flex is-justify-content-center">    
         
     </div>
     <script src="script.js"></script>

@@ -1,7 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap');
 html {
     overflow-y: auto;
+    background-color: transparent;
 }
 .my-text{
     border-radius: 6px;
     box-shadow: 0 0.5em 2em;
+}
+
+#text-logo{
+    font-family: 'Playfair Display', serif;
+    color: #DAA520;
+
+    text-shadow: -2px 3px 1px rgba(0, 0, 0, 0.5);
+    text-transform:uppercase;
+}
+#buscar{
+    background-color: #118f6f77;
+}
+#buscar:hover{
+    background-color: #0c547e7e;
+}
+nav{
+    background-image: url(img/fondo-lol.jpg);
+}
+#texto{
+    background-image: url(img/fondo-lol.jpg);
+    color: rgb(172, 182, 230) !important;
+}
+
+::placeholder{
+    color: rgb(41, 53, 109) !important;
+}
+body{
+    background-image: url(img/fondo-ashe.jpg);
+    background-repeat: repeat;
+    background-size: contain;
+}
+.no{
+    text-align: center;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+}
+
+.card {
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
+    transition: box-shadow 0.5s ease;
+}
+
+.card:hover {
+    box-shadow: 0 0 15px rgba(131, 157, 179, 0.5); 
+    cursor: pointer;
 }

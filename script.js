@@ -1,4 +1,3 @@
-const apiKey = "RGAPI-f243187c-b3b1-4850-880f-b62c6a523937"
 const champion = "champion"
 const campeonesCont = document.getElementById("champs");
 let allChampions = [];
@@ -19,15 +18,15 @@ const printAllChampions = () => {
 
 const buscar = () => {
     const input = document.getElementById("texto").value;
-    const filteredChampions = allChampions.filter((champion) =>
+    const findChamps = allChampions.filter((champion) =>
         champion.name.toLowerCase().includes(input.toLowerCase())
     );
-    printFilteredChampions(filteredChampions);
+    printFindChamps(findChamps);
 };
 
-const printFilteredChampions = (filteredChampions) => {
+const printFindChamps = (findChamps) => {
     campeonesCont.innerHTML = "";
-    filteredChampions.forEach((champion) => {
+    findChamps.forEach((champion) => {
         const image = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion.id}_0.jpg`;
         printChampion(champion, image);
     });
@@ -37,7 +36,7 @@ const printChampion = (champion, image) => {
     const campeones = document.createElement("div");
     campeones.className = "column is-2 mt-2 ml-2";
     campeones.innerHTML = `
-            <div class="card">
+            <div class="card has-background-black ">
                 <div class="card-image">
                     <figure class="image">
                         <img src="${image}">
@@ -45,20 +44,21 @@ const printChampion = (champion, image) => {
                 </div>
                 <div class="card-content">
                     <div class="media-content is-family-sans-serif">
-                        <p class="title is-4 is-family-monospace has-text-weight-medium has-text-centered">${champion.name}</p>
-                        <div class="is-flex is-justify-content-space-around">
-                            ${champion.tags.map(tag => `<p class="has-background-primary pl-1 pr-1 my-text">${tag}</p>`).join("")}
+                        <p class="title is-5 is-family-monospace has-text-weight-medium has-text-centered has-text-warning">${champion.name}</p>
+                        <p class="title no is-7 is-family-monospace has-text-weight-medium has-text-centered has-text-warning is-capitalized">${champion.title}</p>
+                        <div class="is-flex is-justify-content-space-around ">
+                            ${champion.tags.map(tag => `<p class=" pl-1 pr-1 my-text has-text-success-dark">${tag}</p>`).join("")}
                         </div>
                     </div>
                 </div>
                 <div class="content is-flex is-justify-content-space-around">
                     <div class="is-flex is-flex-direction-column is-align-items-center">
-                        <p class="title is-5">${champion.stats.hp} HP</p>
-                        <p class="is-flex-wrap-wrap">Health Points</p>
+                        <p class="title is-5 has-text-warning-dark">${champion.stats.hp} HP</p>
+                        <p class="is-flex-wrap-wrap has-text-warning is-size-7">Health Points</p>
                     </div>
                     <div class="is-flex is-flex-direction-column is-align-items-center">
-                        <p class="title is-5">${champion.stats.attackdamage} AD</p>
-                        <p class="is-flex-wrap-wrap">Attack Damage</p>
+                        <p class="title is-5 has-text-warning-dark">${champion.stats.attackdamage} AD-AP</p>
+                        <p class="is-flex-wrap-wrap has-text-warning is-size-7">Attack Damage</p>
                     </div>
                 </div>
             </div>`;
@@ -75,10 +75,19 @@ document.addEventListener("DOMContentLoaded", getAllChampions);
 
 const input = document.getElementById("texto");
 
+input.addEventListener("focus", () => {
+    input.select();
+})
 
-input.addEventListener('input', function() {
+input.addEventListener("input", function() {
     let inputValue = input.value;
     input.value = primeraLetra(inputValue);
+});
+
+input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") { 
+        buscar();
+    }
 });
 
 let boton = document.getElementById("buscar");
