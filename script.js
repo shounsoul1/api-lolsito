@@ -11,7 +11,7 @@ const getAllChampions = async () => {
 const printAllChampions = () => {
     campeonesCont.innerHTML = "";
     allChampions.forEach((champion) => {
-        const image = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion.id}_0.jpg`;
+        const image = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion.id}_1.jpg`;
         printChampion(champion, image);
     });
 }
@@ -27,7 +27,7 @@ const buscar = () => {
 const printFindChamps = (findChamps) => {
     campeonesCont.innerHTML = "";
     findChamps.forEach((champion) => {
-        const image = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion.id}_0.jpg`;
+        const image = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion.id}_1.jpg`;
         printChampion(champion, image);
     });
 };
